@@ -1,0 +1,19 @@
+<%- include ../views/partials/header.ejs %>
+
+<%- include ../views/partials/navbar.ejs %>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <%- include ../views/partials/editbar.ejs %>
+        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+        <h1>Welcome! <img src="<%= user.avatar_url%>" alt="Yo" height="100px" width="100px"> </h1>
+        <textarea class="fileText" id="source" placeholder="Write here!"><% if (file){ %><%= file.content %><% } %></textarea>
+        <% if (file) { %>
+        <div class="fileText"  id="targetDiv" hidden=true></div>
+        <% } %>
+        </main>
+    </div>
+</div>
+
+<%- include ../views/partials/footer.ejs %>

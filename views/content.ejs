@@ -1,0 +1,25 @@
+<%- include ../views/partials/header.ejs %>
+
+<%- include ../views/partials/navbar.ejs %>
+
+<div class="container-fluid">
+    <div class="row">
+        <%- include ../views/partials/repobar.ejs %>
+
+        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+             <h1>Welcome! <img src="<%= user.avatar_url%>" alt="Yo" height="100px" width="100px"> </h1>
+              <div class="list-group">
+                 <% for(var i=0; i< content.length; ++i) {%>
+                    <button url="<%= content[i].url %>" data-type="<%= content[i].type %>" id="content_info" type="button" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-150 justify-content-between" style="pointer-events:none;">
+                            <h5 class="mb-1" style="pointer-events:none;"><%= content[i].name %> </h5>
+                        </div>
+                        <small style="pointer-events:none;"><%= content[i].type %>, <%= content[i].size %>bytes</small>
+                    </button>
+                <% } %>
+             </div>
+        </main>
+
+    </div>
+</div>
+<%- include ../views/partials/footer.ejs %>

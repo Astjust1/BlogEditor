@@ -1,0 +1,23 @@
+<%- include ../views/partials/header.ejs %>
+
+    <%- include ../views/partials/navbar.ejs %>
+    <div class="container-fluid">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <% if(user) {%>
+          <h1 class="display-3">Hey! <%= user.name %></h1>
+          <% }else{ %>
+          <h1 class="display-3">Hey!</h1>
+          <% } %>
+          <p class="lead">Sign in with your github account and you'll be able to have some fun</p>
+          <hr class="my-4">
+          <p class="lead">
+            <a method="post" href="/auth/github" class="btn btn-primary" role="button">
+                <span class="fa fa-github"></span>Sign in with Github
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+<%-include ../views/partials/footer.ejs %>
